@@ -1,0 +1,17 @@
+# Virtual environment
+venv/
+.env/
+
+# SQLite database
+*.sqlite3
+db.sqlite3
+
+# Django migrations
+**/migrations/
+!**/migrations/__init__.py
+
+# Ignore all migrations
+weather_app/migrations/
+
+# But keep the __init__.py file to maintain package structure
+!weather_app/migrations/__init__.py
