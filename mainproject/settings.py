@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'weather_app',
+    'rest_framework',
+    'auth_app'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +127,21 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#auth_app config
+REST_FRAMEWORK = { 
+    'DEFAULT_AUTHENTICATION_CLASSES': [ 
+        'rest_framework_simplejwt.authentication.JWTAuthentication', 
+    ], 
+} 
+
+
+AUTH_USER_MODEL = 'auth_app.CustomUser'
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),  # Set the access token lifetime (e.g., 1 hour)
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),   # Set the refresh token lifetime (e.g., 7 days)
+    'ROTATE_REFRESH_TOKENS': False,  # Set this to True if you want to rotate refresh tokens on each use
+    'BLACKLIST_AFTER_ROTATION': False,  # If True, blacklists refresh tokens after they are rotated
+}
