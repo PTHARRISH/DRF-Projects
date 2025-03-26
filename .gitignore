@@ -12,6 +12,8 @@ db.sqlite3
 
 # Ignore all migrations
 weather_app/migrations/
+**/__pycache__/
+mainproject/__pycache__/
 
 # But keep the __init__.py file to maintain package structure
 !weather_app/migrations/__init__.py
