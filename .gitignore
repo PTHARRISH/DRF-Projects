@@ -1,10 +1,13 @@
 # Virtual environment
 venv/
 .env/
+.env
+.venv/
 
 # SQLite database
 *.sqlite3
 db.sqlite3
+Readme.md
 
 # Django migrations
 **/migrations/
@@ -14,6 +17,15 @@ db.sqlite3
 weather_app/migrations/
 **/__pycache__/
 mainproject/__pycache__/
+weather_app/__pycache__/
+api/__pycache__/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+# Ignore all files in the migrations directory
+weather_app/migrations/*
 
 
 # But keep the __init__.py file to maintain package structure
