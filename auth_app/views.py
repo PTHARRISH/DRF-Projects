@@ -16,7 +16,6 @@ class HomeView(BaseView):
 
 
 class UserDetails(BaseView):
-
     def get(self, request):
         user = request.user
         user_data = {

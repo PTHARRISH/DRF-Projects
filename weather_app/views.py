@@ -1,18 +1,18 @@
 import json
-import urllib.request
 import os
+import urllib.request
+
+from django.shortcuts import render
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
 
-from django.shortcuts import render
-
 
 def weather_app(request):
     if request.method == "POST":
         name = request.POST["city"]
-        api_key = os.environ['api_key']
+        api_key = os.environ["api_key"]
 
         # Correct URL formatting
         url = f"http://api.openweathermap.org/data/2.5/weather?q={name}&appid={api_key}"
